@@ -4,7 +4,7 @@ const Footer = ({ length }) => {
     const year = new Date();
     return (
 
-        <footer>
+        <footer className="footer">
             <p>The {(length === 1) ? "Task" : "Tasks"} to be completed {length}</p>
             Copyright &copy; Varshana {year.getFullYear()}
         </footer>
