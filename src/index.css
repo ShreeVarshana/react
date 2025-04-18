@@ -1,0 +1,43 @@
+/* Ensure html and body take full height */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* Root container should stretch full screen */
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    background-color: #0033cc;
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Main section */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(white, #f2f2f2);
+    padding: 20px;
+}
+
+/* Footer */
+footer {
+    background-color: #0033cc;
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+    padding: 10px;
+}
