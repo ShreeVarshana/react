@@ -16,6 +16,7 @@ const LineItems = ({ item, handleDelete, handlecheck }) => {
             <FaTrashAlt
                 role="button"
                 tabIndex="0"
+                aria-label={`Delete ${item.item}`}
                 onClick={() => { handleDelete(item.id) }}
             />
         </li>

@@ -1,0 +1,53 @@
+.addForm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 1rem auto;
+    max-width: 500px;
+}
+
+.addForm label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.addForm input {
+    flex: 1;
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.addForm input:focus {
+    border-color: #4caf50;
+}
+
+.addForm button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.addForm button:hover {
+    background-color: #45a049;
+}
+
+.addForm button svg {
+    font-size: 1.2rem;
+}
