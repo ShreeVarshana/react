@@ -7,14 +7,34 @@ import Searchitem from './Searchitem';
 
 function App() {
 
+  const API_URL = "http://localhost:3500/items";
+
   const [items, setitems] = useState([]);
 
   const [newItem, setnewItem] = useState('')
 
   const [search, setsearch] = useState('')
 
+  const [fetcherror, setfetcherror] = useState(null)
+
   useEffect(() => {
-    JSON.parse(localStorage.getItem('todo_lists'))
+    const fetchitems = async () => {
+      try {
+        const response = await fetch(API_URL);
+        if (response.ok) throw Error("Data not received");
+        console.log(response)
+        const listitems = await response.json();
+        setitems(listitems);
+        setfetcherror(null)
+      }
+      catch (error) {
+        setfetcherror(error.message)
+      }
+
+    }
+
+    (async () => await fetchitems())()
+
   }, [])
 
   const id = items.length ? items[items.length - 1].id + 1 : 1;
@@ -23,7 +43,7 @@ function App() {
     const addnewItem = { id, checked: false, content }
     const listItems = [...items, addnewItem]
     setitems(listItems)
-    localStorage.setItem("todo_lists", JSON.stringify(listItems))
+
 
   }
 
@@ -38,7 +58,7 @@ function App() {
   const handleDelete = (id) => {
     const listitems = items.filter((item) => item.id !== id)
     setitems(listitems)
-    localStorage.setItem("todo_lists", JSON.stringify(listitems))
+
   }
 
   const handlecheck = (id) => {
@@ -46,7 +66,7 @@ function App() {
       item.id === id ? { ...item, checked: !item.checked } : item
     )
     setitems(listitems)
-    localStorage.setItem("todo_lists", JSON.stringify(listitems))
+
   }
   let len = items.length
 
