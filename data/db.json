@@ -1,17 +1,17 @@
 {
     "items": [
         {
-            "items": 1,
+            "id": 1,
             "checked": false,
-            "content": "Go joggind"
+            "content": "Go jogging"
         },
         {
-            "items": 1,
+            "id": 2,
             "checked": false,
             "content": "Eat healthy"
         },
         {
-            "items": 1,
+            "id": 3,
             "checked": false,
             "content": "Run fast"
         }
