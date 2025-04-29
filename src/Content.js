@@ -3,7 +3,7 @@ import './Content.css';
 import ItemsList from './ItemsList';
 const Content = ({ items, handleDelete, handlecheck }) => {
     return (
-        <main>
+        <>
             {(items.length) ? (
                 <ItemsList
                     items={items}
@@ -13,7 +13,7 @@ const Content = ({ items, handleDelete, handlecheck }) => {
             ) : (<p style={{ marginTop: '2rem', color: "green" }}>Your list is empty</p>
             )
             }
-        </main >
+        </ >
     )
 }
 

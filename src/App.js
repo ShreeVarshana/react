@@ -85,13 +85,14 @@ function App() {
         setsearch={setsearch}
 
       />
-
-      <Content
-        items={items.filter(item => ((item.content).toLowerCase()).includes(search.toLowerCase()))}
-        handlecheck={handlecheck}
-        handleDelete={handleDelete}
-      />
-
+      <main>
+        {fetcherror && <p>{`Error : ${fetcherror}`}</p>}
+        <Content
+          items={items.filter(item => ((item.content).toLowerCase()).includes(search.toLowerCase()))}
+          handlecheck={handlecheck}
+          handleDelete={handleDelete}
+        />
+      </main>
       <Footer length={len} />
     </div>
 
